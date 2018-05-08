@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define PLAYER 10
+#define NAME 8+1
+
+typedef struct{
+  int no;
+  char name[NAME];
+  int hp;
+  int mp;
+  double attack;
+  double defence;
+  double speed;
+  int player_no;
+}parameter;
+
+int main(void)
+{
+  srand(1);
+
+  parameter player[PLAYER];
+
+  init(player);
+
+  dispArray(player);
+
+  return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void)
+{
+  int a[10], sum = 0;
+  int i;
+
+  i = 0;
+  while(i < 10){
+    a[i] = i * 2 + 1;
+    i++;
+  }
+
+  i = 0;
+  while(i < 10){
+    printf("a[%d] = %d\n", i, a[i]);
+    i++;
+  }
+
+  printf("\n");
+
+  i = 0;
+  while(i < 10){
+    sum += a[i];
+    i++;
+  }
+  printf("sum = %d\n", sum);
+
+  return 0;
+}

@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define ELEMENT 100
+
+void initArray(int[]);
+void dispArray(int[]);
+void bubbleSort(int[]);
+void swap(int*, int*);
+
+int main(void)
+{
+  int numBox[ELEMENT] = {0};
+
+  initArray(numBox);
+  dispArray(numBox);
+
+  selectionSort(numBox);
+  dispArray(numBox);
+
+  printf("Programs End\n");
+  return 0;
+}
+
+void initArray(int array[])
+{
+  srand((unsigned)time(NULL));
+  int i;
+  for(i = 0;i < ELEMENT;i++){
+    array[i] = rand();
+  }
+}
+
+void dispArray(int array[])
+{
+  int i;
+  for(i = 0;i < ELEMENT;i++){
+    printf("array[%2d] => %d\n", i, array[i]);
+  }
+}
+
+void bubbleSort(int array[])
+{
+
+}
+
+void swap(int *a, int *b)
+{
+  int temp;
+  
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}

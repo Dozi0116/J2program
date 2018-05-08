@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void swap(int *a, int *b)
+{
+  int temp;
+
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+int main(void)
+{
+  int tate, yoko;
+  int bomb;
+
+  printf("マップの大きさを(縦,横)で入力 => ");
+  scanf("%d,%d", &tate, &yoko);
+
+  int map[yoko][tate];
+  int i, j;
+  for(i = 0;i < yoko;i++){
+    for(j = 0;j < tate;j++){
+      map[yoko][tate] = 0;
+    }
+  }
+
+  printf("マップに配置する爆弾の割合(%)を入力 => ");
+  scanf("%d", &bomb);
+
+  printf("縦%dマス、横%dマス、爆弾%d%%で設定しました。\n", tate, yoko, bomb);
+
+  int mass = yoko * tate;
+  int per = mass * bomb;
+
+  for(i = 0;i < yoko;i++){
+    for(j = 0;j < tate;j++){
+      if(per > 0){
+	map[yoko][tate] = 1;
+	per--;
+      }
+    }
+  }
+
+  int shuffle = mass * 3;
+  int sTate, gTate, sYoko, gYoko;
+  for(;shuffle >= 0;shuffle){
+    sTate = rand() % tate;
+    sYoko = rand() % yoko;
+    gTate = rand() % tate;
+    gYoko = ramd() % yoko;
+    swap(&map[sYoko][sTate], &map[gYoko][gTate]);
+  }
+  
+  return 0;
+}

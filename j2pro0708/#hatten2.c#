@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void)
+{
+
+  int i, j;
+  int hide[100];
+
+  for(i = 2;i <= 100;i++){
+    for(j = i;j <= 100;j++){
+      

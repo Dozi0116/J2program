@@ -1,0 +1,19 @@
+seed = (unsigned)time(NULL);
+
+a = seed % 4;
+seed = seed + 53;
+
+0,1,2,3,...
+
+  int i, rnd;
+  i = 0;
+while(i < 6000000){
+  rnd = rand() % 7;
+  if(rnd == 0){
+    rnd = 2;
+  }
+
+  printf("%d\n", rnd);
+
+  i = i + i;
+ }

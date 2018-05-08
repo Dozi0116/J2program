@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+#define CAR 0
+#define YAGI 1
+
+#define DOOR 3
+#define CASE 3
+
+#define LEFT 0
+#define CENTER 1
+#define RIGHT 2
+
+int main(void)
+{
+  int door[DOOR];
+  int choose;
+  printf("場合分け\n");
+  for(i = 0;i < CASE;i++){
+    switch(i){
+    case 0:
+      set(door, CAR, YAGI, YAGI);
+      break;
+    case 1:
+      set(door, YAGI, CAR, YAGI);
+      break;
+    case 2:
+      set(door, YAGI, YAGI, CAR);
+      break;
+    }//車がどこにあるかのセット
+    for(j = 0;j < DOOR;j++){//どの扉を選ぶか
+      printf("ここで正解している確率... %d%%\n", (1 / DOOR) * 100);
+      /*switch(j){
+      case LEFT:
+	open(door, CENTER, RIGHT);
+	break;
+      case CENTER:
+	open(door, LEFT, RIGHT);
+	break;
+      case RIGHT:
+	open(door, LEFT, CENTER);
+	break;
+      }
+      }*/
+  }
+  return 0;
+}
